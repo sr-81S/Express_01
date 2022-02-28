@@ -1,0 +1,22 @@
+{
+  "name": "social",
+  "version": "1.0.0",
+  "description": "a basic social media app",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "express",
+    "api"
+  ],
+  "author": "sarojsabar",
+  "license": "ISC",
+  "dependencies": {
+    "date-format": "^4.0.3",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
