@@ -1,0 +1,76 @@
+openapi: 3.0.0
+info:
+  title: social App
+  description: this is our 1st social app to create 
+  version: 1.0.1
+
+servers:
+  - url: http://localhost:4000/api/v1
+    description: currently deplyed in local machine
+  - url: https://localhost:4000/api/v1
+    description: this is the dumy server the use in the devlopement
+
+components:
+  securitySchemes:
+      BasicAuth:
+          type: http
+          scheme: basic
+      BearerAuth:
+          type: http
+          scheme: bearer
+
+paths:
+  /instagram:
+    get:
+      summary: return user, followers, follows
+      responses:
+        '200': # status code
+         description: return an object
+         content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                followers:
+                  type: string
+                follows:
+                  type: string
+    post:
+      summary: return user, followers, follows
+      responses:
+        '200': # status code
+         description: return an object
+         content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                followers:
+                  type: string
+                follows:
+                  type: string
+  /{token}:  
+    get:
+      summary: return whatever in the param
+      parameters:
+        - name: token
+          default: 5
+          in: path
+          schema:
+            type: string
+      responses:
+        '200': # status code
+         description: return an object
+         content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                params:
+                  type: string
+                
+          
